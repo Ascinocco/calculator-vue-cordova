@@ -9,16 +9,16 @@
         <title>Calculator</title>
     </head>
     <body>
-        <div id="app" class="app">
-            <ul>
-                <li>
-                    <router-link to="/">Splash</router-link>
-                </li>
-                <li>
-                    <router-link to="/calculator">Calculator</router-link>
-                </li>
-            </ul>
-            <router-view></router-view>
+        <div id="app">
+            <div id="nav">
+                <ul>
+                    <li><router-link to="/">Splash</router-link></li>
+                    <li><router-link to="/calculator">Calculator</router-link></li>
+                </ul>
+            </div>
+            <div id="content">
+                <router-view></router-view>
+            </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/app/build.js"></script>

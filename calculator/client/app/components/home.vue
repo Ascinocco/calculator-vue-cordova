@@ -1,12 +1,12 @@
 <template>
-    <div>
+    <div class="home-test">
         <h1>Calculator Splash Page</h1>
         <h2>{{ msg }}</h2>
     </div>
 </template>
 <style>
-    body {
-        background-color: #b22222;
+    .home-test {
+        background-color: blue;
     }
 </style>
 <script>

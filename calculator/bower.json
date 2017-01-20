@@ -1,0 +1,14 @@
+{
+  "name": "calculator",
+  "description": "Front end dependencies for calculator",
+  "main": "",
+  "authors": [
+    "Anthony Scinocco <scinocco.a@gmail.com>"
+  ],
+  "license": "no",
+  "homepage": "https://github.com/Ascinocco/calculator-vue-cordova",
+  "private": true,
+  "dependencies": {
+    "bootstrap-material-design": "^4.0.2"
+  }
+}

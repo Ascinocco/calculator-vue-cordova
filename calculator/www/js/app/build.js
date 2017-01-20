@@ -11028,7 +11028,7 @@
 
 
 	// module
-	exports.push([module.id, "\nbody {\n    background-color: #b22222;\n}\n", ""]);
+	exports.push([module.id, "\n.home-test {\n    background-color: blue;\n}\n", ""]);
 
 	// exports
 
@@ -11345,7 +11345,9 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', [_c('h1', [_vm._v("Calculator Splash Page")]), _vm._v(" "), _c('h2', [_vm._v(_vm._s(_vm.msg))])])
+	  return _c('div', {
+	    staticClass: "home-test"
+	  }, [_c('h1', [_vm._v("Calculator Splash Page")]), _vm._v(" "), _c('h2', [_vm._v(_vm._s(_vm.msg))])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -11437,7 +11439,7 @@
 
 
 	// module
-	exports.push([module.id, "\nbody{\n    background-color: #5f9ea0;\n}\n", ""]);
+	exports.push([module.id, "\n.calc-test {\n    background-color: firebrick;\n}\n", ""]);
 
 	// exports
 
@@ -11476,7 +11478,9 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', [_c('h1', [_vm._v("Calculator Page")]), _vm._v(" "), _c('h2', [_vm._v(_vm._s(_vm.msg))])])
+	  return _c('div', {
+	    staticClass: "calc-test"
+	  }, [_c('h1', [_vm._v("Calculator Page")]), _vm._v(" "), _c('h2', [_vm._v(_vm._s(_vm.msg))])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {

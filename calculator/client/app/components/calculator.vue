@@ -1,12 +1,12 @@
 <template>
-    <div>
+    <div class="calc-test">
         <h1>Calculator Page</h1>
         <h2>{{ msg }}</h2>
     </div>
 </template>
 <style>
-    body{
-        background-color: #5f9ea0;
+    .calc-test {
+        background-color: firebrick;
     }
 </style>
 <script>
