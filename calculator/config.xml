@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloCordova</name>
+<widget id="io.anthony.calculator" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Calculator</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        A calculator that supports scientific calculations as well as graphing
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="scinocco.a@gmail.com" href="http://anthonyscinocco.com">
+        Anthony Scinocco
     </author>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
