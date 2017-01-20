@@ -9,6 +9,6 @@
   "homepage": "https://github.com/Ascinocco/calculator-vue-cordova",
   "private": true,
   "dependencies": {
-    "bootstrap-material-design": "^4.0.2"
+    "materialize": "^0.97.8"
   }
 }

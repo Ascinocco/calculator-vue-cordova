@@ -45,6 +45,3 @@ var app = {
 
 // init app
 app.initialize();
-
-// init bootstrap material
-$.material.init();
