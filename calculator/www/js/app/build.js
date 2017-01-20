@@ -54,9 +54,9 @@
 
 	var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-	var _home = __webpack_require__(4);
+	var _splash = __webpack_require__(4);
 
-	var _home2 = _interopRequireDefault(_home);
+	var _splash2 = _interopRequireDefault(_splash);
 
 	var _calculator = __webpack_require__(11);
 
@@ -69,7 +69,7 @@
 	var router = new _vueRouter2.default({
 	    mode: 'hash',
 	    base: window.location.href,
-	    routes: [{ path: '/', component: _home2.default }, { path: '/calculator', component: _calculator2.default }]
+	    routes: [{ path: '/', component: _splash2.default }, { path: '/calculator', component: _calculator2.default }]
 	});
 
 	var calcApp = new _vue2.default({
@@ -10972,7 +10972,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/anthony/Documents/School/Year Three/Semester One/Mobile and Pervasive Computing/assignment-1/calculator-vue-cordova/calculator/client/app/components/home.vue"
+	__vue_options__.__file = "/Users/anthony/Documents/School/Year Three/Semester One/Mobile and Pervasive Computing/assignment-1/calculator-vue-cordova/calculator/client/app/components/splash.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -10983,12 +10983,12 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-7c4dc61a", __vue_options__)
+	    hotAPI.createRecord("data-v-26800a3c", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-7c4dc61a", __vue_options__)
+	    hotAPI.reload("data-v-26800a3c", __vue_options__)
 	  }
 	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] home.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+	if (__vue_options__.functional) {console.error("[vue-loader] splash.vue: functional components are not supported and should be defined in plain js files using render functions.")}
 
 	module.exports = __vue_exports__
 
@@ -11009,8 +11009,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7c4dc61a!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./home.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7c4dc61a!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./home.vue");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-26800a3c!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./splash.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-26800a3c!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./splash.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -11028,7 +11028,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.home-test {\n    background-color: blue;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -11328,15 +11328,24 @@
 	//
 	//
 	//
-	//
-	//
-	//
 
 	exports.default = {
 	    data: function data() {
 	        return {
 	            msg: 'Calc It!'
 	        };
+	    },
+	    mounted: function mounted() {
+	        console.log('Splash Component Mounted...');
+
+	        // annoying transference of state
+	        var that = this;
+
+	        var splashCount = function splashCount(that) {
+	            that.$router.push('/contact');
+	        };
+
+	        setTimeout(splashCount, 5000, that);
 	    }
 	};
 
@@ -11345,15 +11354,26 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _vm._m(0)
+	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
-	    staticClass: "home-test"
-	  }, [_c('h1', [_vm._v("Calculator Splash Page")]), _vm._v(" "), _c('h2', [_vm._v(_vm._s(_vm.msg))])])
-	},staticRenderFns: []}
+	    attrs: {
+	      "id": "splash-screen"
+	    }
+	  }, [_c('img', {
+	    attrs: {
+	      "src": "/img/splash.gif",
+	      "alt": "Splash",
+	      "height": "100%",
+	      "width": "100%"
+	    }
+	  })])
+	}]}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-7c4dc61a", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-26800a3c", module.exports)
 	  }
 	}
 
