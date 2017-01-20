@@ -8,15 +8,10 @@
 </style>
 <script>
     export default{
-        data(){
-            return {
-                msg: 'Calc It!',
-            }
-        },
-
         mounted() {
             console.log('Splash Component Mounted...');
             var that = this;
+
             $("div#splash-screen").delay(5000).fadeOut(1000);
 
             var changePage = function(that) {
