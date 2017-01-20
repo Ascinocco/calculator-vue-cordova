@@ -72,7 +72,7 @@
 	    routes: [{ path: '/', component: _home2.default }, { path: '/calculator', component: _calculator2.default }]
 	});
 
-	var app = new _vue2.default({
+	var calcApp = new _vue2.default({
 	    router: router
 	}).$mount('#app');
 

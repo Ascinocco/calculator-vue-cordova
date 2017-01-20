@@ -15,6 +15,6 @@ var router = new VueRouter({
     ]
 });
 
-var app = new Vue({
+var calcApp = new Vue({
     router,
 }).$mount('#app');
