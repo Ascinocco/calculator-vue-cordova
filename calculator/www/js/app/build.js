@@ -11337,15 +11337,14 @@
 	    },
 	    mounted: function mounted() {
 	        console.log('Splash Component Mounted...');
-
-	        // annoying transference of state
 	        var that = this;
+	        $("div#splash-screen").delay(5000).fadeOut(1000);
 
-	        var splashCount = function splashCount(that) {
-	            that.$router.push('/contact');
+	        var changePage = function changePage(that) {
+	            that.$router.push('/calculator');
 	        };
 
-	        setTimeout(splashCount, 5000, that);
+	        setTimeout(changePage, 6100, that);
 	    }
 	};
 
