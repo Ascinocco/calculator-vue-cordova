@@ -6,63 +6,63 @@
             </div>
         </div>
         <div class="row calc-removeMarginBottom">
-            <div class="col s9 m9 l9 calc-ac">
+            <div class="col s9 m9 l9 calc-ac calc">
                 <h2>AC</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operator">
+            <div class="col s3 m3 l3 calc-operator calc">
                 <h2>&divide;</h2>
             </div>
         </div>
         <div class="row calc-removeMarginBottom">
-            <div class="col s3 m3 l3 calc-operand">
+            <div class="col s3 m3 l3 calc-operand calc">
                 <h2>7</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operand">
+            <div class="col s3 m3 l3 calc-operand calc">
                 <h2>8</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operand">
+            <div class="col s3 m3 l3 calc-operand calc">
                 <h2>9</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operator">
-                <h2>X</h2>
+            <div class="col s3 m3 l3 calc-operator calc">
+                <h2>x</h2>
             </div>
         </div>
         <div class="row calc-removeMarginBottom">
-            <div class="col s3 m3 l3 calc-operand">
+            <div class="col s3 m3 l3 calc-operand calc">
                 <h2>4</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operand">
+            <div class="col s3 m3 l3 calc-operand calc">
                 <h2>5</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operand">
+            <div class="col s3 m3 l3 calc-operand calc">
                 <h2>6</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operator">
+            <div class="col s3 m3 l3 calc-operator calc">
                 <h2>-</h2>
             </div>
         </div>
         <div class="row calc-removeMarginBottom">
-            <div class="col s3 m3 l3 calc-operand">
+            <div class="col s3 m3 l3 calc-operand calc">
                 <h2>1</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operand">
+            <div class="col s3 m3 l3 calc-operand calc">
                 <h2>2</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operand">
+            <div class="col s3 m3 l3 calc-operand calc">
                 <h2>3</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operator">
+            <div class="col s3 m3 l3 calc-operator calc">
                 <h2>+</h2>
             </div>
         </div>
         <div class="row calc-removeMarginBottom">
-            <div class="col s6 m6 l6 calc-operand">
+            <div class="col s6 m6 l6 calc-operand calc">
                 <h2>0</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operand">
+            <div class="col s3 m3 l3 calc-operand calc">
                 <h2>.</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operator">
+            <div class="col s3 m3 l3 calc-operator calc">
                 <h2>=</h2>
             </div>
         </div>
@@ -106,6 +106,11 @@
         border-style: solid;
         border-width: 0.5px;
         border-color: #696969;
+    }
+
+    .calc:hover {
+        background-color: #000080;
+        color: #ffffff;
     }
 
     .calc-removeMarginBottom {
