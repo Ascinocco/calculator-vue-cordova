@@ -11588,10 +11588,12 @@
 	//
 	//
 	//
+	//
 
 	exports.default = {
 	    data: function data() {
 	        return {
+	            calcEmpty: true,
 	            currentInput: '',
 	            calculationString: '',
 	            lastResult: '',
@@ -11605,17 +11607,21 @@
 
 	    methods: {
 	        clear: function clear() {
+	            this.calcEmpty = true;
 	            this.currentInput = '';
 	            this.calculationString = '';
 	            this.lastResult = '';
 	            this.result = '';
 	        },
 	        buildCalculation: function buildCalculation(inputString) {
+	            this.calcEmpty = false;
 	            this.calculationString = this.calculationString + '' + inputString;
 	            this.currentInput = this.calculationString;
 	        },
 	        calculate: function calculate(calculation) {
+	            this.calcEmpty = false;
 	            this.result = eval(this.calculationString);
+	            this.calculationString = this.result;
 	            this.currentInput = this.result;
 	        }
 	    }
@@ -11634,7 +11640,9 @@
 	    staticClass: "row calc-removeMarginBottom"
 	  }, [_c('div', {
 	    staticClass: "col s12 m12 l12 calc-inputBar"
-	  }, [_c('h1', {
+	  }, [(_vm.calcEmpty) ? _c('h1', {
+	    staticClass: "calc-inputValue"
+	  }, [_vm._v("0")]) : _c('h1', {
 	    staticClass: "calc-inputValue",
 	    attrs: {
 	      "id": "calc-inputValue"

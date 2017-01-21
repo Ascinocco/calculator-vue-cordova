@@ -2,7 +2,8 @@
     <div id="calculator">
         <div class="row calc-removeMarginBottom">
             <div class="col s12 m12 l12 calc-inputBar">
-                <h1 id="calc-inputValue" class="calc-inputValue">{{ currentInput }}</h1>
+                <h1 v-if="calcEmpty" class="calc-inputValue">0</h1>
+                <h1 v-else id="calc-inputValue" class="calc-inputValue">{{ currentInput }}</h1>
             </div>
         </div>
         <div class="row calc-removeMarginBottom">
@@ -122,6 +123,7 @@
     export default{
         data(){
             return {
+                calcEmpty: true,
                 currentInput: '',
                 calculationString: '',
                 lastResult: '',
@@ -135,6 +137,7 @@
 
         methods: {
             clear() {
+                this.calcEmpty = true;
                 this.currentInput = '';
                 this.calculationString = '';
                 this.lastResult = '';
@@ -142,12 +145,15 @@
             },
 
             buildCalculation(inputString) {
+                this.calcEmpty = false;
                 this.calculationString = this.calculationString + '' + inputString;
                 this.currentInput = this.calculationString;
             },
 
             calculate(calculation) {
+                this.calcEmpty = false;
                 this.result = eval(this.calculationString);
+                this.calculationString = this.result;
                 this.currentInput = this.result;
             }
         }
