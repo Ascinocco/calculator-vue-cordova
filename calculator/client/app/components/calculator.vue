@@ -7,8 +7,14 @@
             </div>
         </div>
         <div class="row calc-removeMarginBottom">
-            <div class="col s9 m9 l9 calc-ac calc" v-on:click="clear()">
+            <div class="col s3 m3 l3 calc-operand calc" v-on:click="clear()">
                 <h2>AC</h2>
+            </div>
+            <div class="col s3 m3 l3 calc-operand calc" v-on:click="buildCalculation('-')">
+                <h2>NEG</h2>
+            </div>
+            <div class="col s3 m3 l3 calc-operand calc" v-on:click="percentToDecimal()">
+                <h2>%</h2>
             </div>
             <div class="col s3 m3 l3 calc-operator calc" v-on:click="buildCalculation('/')">
                 <h2>/</h2>
@@ -80,15 +86,6 @@
         float: right;
     }
 
-    .calc-ac {
-        background-color: #A9A9A9;
-        height: 100px;
-        cursor: pointer;
-        border-style: solid;
-        border-width: 0.5px;
-        border-color: #696969;
-    }
-
     .calc-operand {
         background-color: #A9A9A9;
         height: 100px;
@@ -142,6 +139,17 @@
                 this.calculationString = '';
                 this.lastResult = '';
                 this.result = '';
+            },
+
+            percentToDecimal() {
+                // doesn't handle the edge case in which there are two numbers of the same value
+                // and i need to replace one with its decimal version but the other remains the same...
+                // do i need to add some sort of marker annotating the number to be replaced???
+                // outside of this edge case it works... :/
+                var oldInput = this.currentInput;
+                this.currentInput = eval(this.currentInput + '/100');
+                this.calculationString = this.calculationString.replace(oldInput, this.currentInput);
+                console.log(this.calculationString)
             },
 
             buildCalculation(inputString) {

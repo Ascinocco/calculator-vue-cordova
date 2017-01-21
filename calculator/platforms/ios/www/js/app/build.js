@@ -11454,7 +11454,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.calc-inputBar {\n    background-color: #696969;\n    color: #ffffff;\n    height: 125px;\n}\n.calc-inputValue {\n    float: right;\n}\n.calc-ac {\n    background-color: #A9A9A9;\n    height: 100px;\n    cursor: pointer;\n    border-style: solid;\n    border-width: 0.5px;\n    border-color: #696969;\n}\n.calc-operand {\n    background-color: #A9A9A9;\n    height: 100px;\n    text-align: center;\n    cursor: pointer;\n    border-style: solid;\n    border-width: 0.5px;\n    border-color: #696969;\n}\n.calc-operator {\n    background-color: #FF8C00;\n    height: 100px;\n    text-align: center;\n    cursor: pointer;\n    border-style: solid;\n    border-width: 0.5px;\n    border-color: #696969;\n}\n.calc:hover {\n    background-color: #000080;\n    color: #ffffff;\n}\n.calc-removeMarginBottom {\n    margin-bottom: 0px;\n}\n\n", ""]);
+	exports.push([module.id, "\n.calc-inputBar {\n    background-color: #696969;\n    color: #ffffff;\n    height: 125px;\n}\n.calc-inputValue {\n    float: right;\n}\n.calc-operand {\n    background-color: #A9A9A9;\n    height: 100px;\n    text-align: center;\n    cursor: pointer;\n    border-style: solid;\n    border-width: 0.5px;\n    border-color: #696969;\n}\n.calc-operator {\n    background-color: #FF8C00;\n    height: 100px;\n    text-align: center;\n    cursor: pointer;\n    border-style: solid;\n    border-width: 0.5px;\n    border-color: #696969;\n}\n.calc:hover {\n    background-color: #000080;\n    color: #ffffff;\n}\n.calc-removeMarginBottom {\n    margin-bottom: 0px;\n}\n\n", ""]);
 
 	// exports
 
@@ -11468,9 +11468,6 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	//
-	//
-	//
 	//
 	//
 	//
@@ -11613,6 +11610,12 @@
 	            this.lastResult = '';
 	            this.result = '';
 	        },
+	        percentToDecimal: function percentToDecimal() {
+	            var oldInput = this.currentInput;
+	            this.currentInput = eval(this.currentInput + '/100');
+	            this.calculationString = this.calculationString.replace(oldInput, this.currentInput);
+	            console.log(this.calculationString);
+	        },
 	        buildCalculation: function buildCalculation(inputString) {
 	            this.calcEmpty = false;
 	            this.calculationString = this.calculationString + '' + inputString;
@@ -11650,13 +11653,27 @@
 	  }, [_vm._v(_vm._s(_vm.currentInput))])])]), _vm._v(" "), _c('div', {
 	    staticClass: "row calc-removeMarginBottom"
 	  }, [_c('div', {
-	    staticClass: "col s9 m9 l9 calc-ac calc",
+	    staticClass: "col s3 m3 l3 calc-operand calc",
 	    on: {
 	      "click": function($event) {
 	        _vm.clear()
 	      }
 	    }
 	  }, [_c('h2', [_vm._v("AC")])]), _vm._v(" "), _c('div', {
+	    staticClass: "col s3 m3 l3 calc-operand calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.buildCalculation('-')
+	      }
+	    }
+	  }, [_c('h2', [_vm._v("NEG")])]), _vm._v(" "), _c('div', {
+	    staticClass: "col s3 m3 l3 calc-operand calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.percentToDecimal()
+	      }
+	    }
+	  }, [_c('h2', [_vm._v("%")])]), _vm._v(" "), _c('div', {
 	    staticClass: "col s3 m3 l3 calc-operator calc",
 	    on: {
 	      "click": function($event) {
