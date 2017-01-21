@@ -142,10 +142,6 @@
             },
 
             percentToDecimal() {
-                // doesn't handle the edge case in which there are two numbers of the same value
-                // and i need to replace one with its decimal version but the other remains the same...
-                // do i need to add some sort of marker annotating the number to be replaced???
-                // outside of this edge case it works... :/
                 var oldInput = this.currentInput;
                 this.currentInput = eval(this.currentInput + '/100');
                 this.calculationString = this.calculationString.replace(oldInput, this.currentInput);
