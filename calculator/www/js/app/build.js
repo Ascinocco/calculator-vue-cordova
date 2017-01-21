@@ -11454,7 +11454,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.calc-test {\n    background-color: firebrick;\n}\n", ""]);
+	exports.push([module.id, "\n.calc-inputBar {\n    background-color: #696969;\n    color: #ffffff;\n    height: 125px;\n}\n.calc-inputValue {\n    float: right;\n}\n.calc-ac {\n    background-color: #A9A9A9;\n    height: 100px;\n    cursor: pointer;\n    border-style: solid;\n    border-width: 0.5px;\n    border-color: #696969;\n}\n.calc-operand {\n    background-color: #A9A9A9;\n    height: 100px;\n    text-align: center;\n    cursor: pointer;\n    border-style: solid;\n    border-width: 0.5px;\n    border-color: #696969;\n}\n.calc-operator {\n    background-color: #FF8C00;\n    height: 100px;\n    text-align: center;\n    cursor: pointer;\n    border-style: solid;\n    border-width: 0.5px;\n    border-color: #696969;\n}\n.calc-removeMarginBottom {\n    margin-bottom: 0px;\n}\n\n", ""]);
 
 	// exports
 
@@ -11479,12 +11479,138 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	exports.default = {
 	    data: function data() {
 	        return {
-	            msg: 'Calca palooza'
+	            currentInput: 0,
+	            calculationString: '',
+	            lastResult: '',
+	            result: ''
 	        };
+	    },
+	    mounted: function mounted() {
+	        console.log('Calculator Component Mounted');
+	    },
+
+
+	    methods: {
+	        clear: function clear() {
+	            this.currentInput = '';
+	            this.calculationString = '';
+	            this.lastResult = '';
+	            this.result = '';
+	        },
+	        buildCalculation: function buildCalculation() {
+	            this.calculationString = this.calculationString + ' ' + this.currentInput;
+	        },
+	        calculate: function calculate(calculation) {
+	            this.result = eval(calculation);
+	        }
 	    }
 	};
 
@@ -11494,9 +11620,74 @@
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
-	    staticClass: "calc-test"
-	  }, [_c('h1', [_vm._v("Calculator Page")]), _vm._v(" "), _c('h2', [_vm._v(_vm._s(_vm.msg))])])
-	},staticRenderFns: []}
+	    attrs: {
+	      "id": "calculator"
+	    }
+	  }, [_c('div', {
+	    staticClass: "row calc-removeMarginBottom"
+	  }, [_c('div', {
+	    staticClass: "col s12 m12 l12 calc-inputBar"
+	  }, [_c('h1', {
+	    staticClass: "calc-inputValue",
+	    attrs: {
+	      "id": "calc-inputValue"
+	    }
+	  }, [_vm._v(_vm._s(_vm.currentInput))])])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4)])
+	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "row calc-removeMarginBottom"
+	  }, [_c('div', {
+	    staticClass: "col s9 m9 l9 calc-ac"
+	  }, [_c('h2', [_vm._v("AC")])]), _vm._v(" "), _c('div', {
+	    staticClass: "col s3 m3 l3 calc-operator"
+	  }, [_c('h2', [_vm._v("÷")])])])
+	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "row calc-removeMarginBottom"
+	  }, [_c('div', {
+	    staticClass: "col s3 m3 l3 calc-operand"
+	  }, [_c('h2', [_vm._v("7")])]), _vm._v(" "), _c('div', {
+	    staticClass: "col s3 m3 l3 calc-operand"
+	  }, [_c('h2', [_vm._v("8")])]), _vm._v(" "), _c('div', {
+	    staticClass: "col s3 m3 l3 calc-operand"
+	  }, [_c('h2', [_vm._v("9")])]), _vm._v(" "), _c('div', {
+	    staticClass: "col s3 m3 l3 calc-operator"
+	  }, [_c('h2', [_vm._v("X")])])])
+	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "row calc-removeMarginBottom"
+	  }, [_c('div', {
+	    staticClass: "col s3 m3 l3 calc-operand"
+	  }, [_c('h2', [_vm._v("4")])]), _vm._v(" "), _c('div', {
+	    staticClass: "col s3 m3 l3 calc-operand"
+	  }, [_c('h2', [_vm._v("5")])]), _vm._v(" "), _c('div', {
+	    staticClass: "col s3 m3 l3 calc-operand"
+	  }, [_c('h2', [_vm._v("6")])]), _vm._v(" "), _c('div', {
+	    staticClass: "col s3 m3 l3 calc-operator"
+	  }, [_c('h2', [_vm._v("-")])])])
+	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "row calc-removeMarginBottom"
+	  }, [_c('div', {
+	    staticClass: "col s3 m3 l3 calc-operand"
+	  }, [_c('h2', [_vm._v("1")])]), _vm._v(" "), _c('div', {
+	    staticClass: "col s3 m3 l3 calc-operand"
+	  }, [_c('h2', [_vm._v("2")])]), _vm._v(" "), _c('div', {
+	    staticClass: "col s3 m3 l3 calc-operand"
+	  }, [_c('h2', [_vm._v("3")])]), _vm._v(" "), _c('div', {
+	    staticClass: "col s3 m3 l3 calc-operator"
+	  }, [_c('h2', [_vm._v("+")])])])
+	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "row calc-removeMarginBottom"
+	  }, [_c('div', {
+	    staticClass: "col s6 m6 l6 calc-operand"
+	  }, [_c('h2', [_vm._v("0")])]), _vm._v(" "), _c('div', {
+	    staticClass: "col s3 m3 l3 calc-operand"
+	  }, [_c('h2', [_vm._v(".")])]), _vm._v(" "), _c('div', {
+	    staticClass: "col s3 m3 l3 calc-operator"
+	  }, [_c('h2', [_vm._v("=")])])])
+	}]}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()
