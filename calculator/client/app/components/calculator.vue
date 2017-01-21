@@ -6,63 +6,63 @@
             </div>
         </div>
         <div class="row calc-removeMarginBottom">
-            <div class="col s9 m9 l9 calc-ac calc">
+            <div class="col s9 m9 l9 calc-ac calc" v-on:click="clear()">
                 <h2>AC</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operator calc">
-                <h2>&divide;</h2>
+            <div class="col s3 m3 l3 calc-operator calc" v-on:click="buildCalculation('/')">
+                <h2>/</h2>
             </div>
         </div>
         <div class="row calc-removeMarginBottom">
-            <div class="col s3 m3 l3 calc-operand calc">
+            <div class="col s3 m3 l3 calc-operand calc" v-on:click="buildCalculation('7')">
                 <h2>7</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operand calc">
+            <div class="col s3 m3 l3 calc-operand calc" v-on:click="buildCalculation('8')">
                 <h2>8</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operand calc">
+            <div class="col s3 m3 l3 calc-operand calc" v-on:click="buildCalculation('9')">
                 <h2>9</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operator calc">
-                <h2>x</h2>
+            <div class="col s3 m3 l3 calc-operator calc" v-on:click="buildCalculation('*')">
+                <h2>*</h2>
             </div>
         </div>
         <div class="row calc-removeMarginBottom">
-            <div class="col s3 m3 l3 calc-operand calc">
+            <div class="col s3 m3 l3 calc-operand calc" v-on:click="buildCalculation('4')">
                 <h2>4</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operand calc">
+            <div class="col s3 m3 l3 calc-operand calc" v-on:click="buildCalculation('5')">
                 <h2>5</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operand calc">
+            <div class="col s3 m3 l3 calc-operand calc" v-on:click="buildCalculation('6')">
                 <h2>6</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operator calc">
+            <div class="col s3 m3 l3 calc-operator calc" v-on:click="buildCalculation('-')">
                 <h2>-</h2>
             </div>
         </div>
         <div class="row calc-removeMarginBottom">
-            <div class="col s3 m3 l3 calc-operand calc">
+            <div class="col s3 m3 l3 calc-operand calc" v-on:click="buildCalculation('1')">
                 <h2>1</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operand calc">
+            <div class="col s3 m3 l3 calc-operand calc" v-on:click="buildCalculation('2')">
                 <h2>2</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operand calc">
+            <div class="col s3 m3 l3 calc-operand calc" v-on:click="buildCalculation('3')">
                 <h2>3</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operator calc">
+            <div class="col s3 m3 l3 calc-operator calc" v-on:click="buildCalculation('+')">
                 <h2>+</h2>
             </div>
         </div>
         <div class="row calc-removeMarginBottom">
-            <div class="col s6 m6 l6 calc-operand calc">
+            <div class="col s6 m6 l6 calc-operand calc" v-on:click="buildCalculation('0')">
                 <h2>0</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operand calc">
+            <div class="col s3 m3 l3 calc-operand calc" v-on:click="buildCalculation('.')">
                 <h2>.</h2>
             </div>
-            <div class="col s3 m3 l3 calc-operator calc">
+            <div class="col s3 m3 l3 calc-operator calc" v-on:click="calculate()">
                 <h2>=</h2>
             </div>
         </div>
@@ -122,7 +122,7 @@
     export default{
         data(){
             return {
-                currentInput: 0,
+                currentInput: '',
                 calculationString: '',
                 lastResult: '',
                 result: ''
@@ -141,12 +141,14 @@
                 this.result = '';
             },
 
-            buildCalculation() {
-                this.calculationString = this.calculationString + ' ' + this.currentInput;
+            buildCalculation(inputString) {
+                this.calculationString = this.calculationString + '' + inputString;
+                this.currentInput = this.calculationString;
             },
 
             calculate(calculation) {
-                this.result = eval(calculation)
+                this.result = eval(this.calculationString);
+                this.currentInput = this.result;
             }
         }
     }

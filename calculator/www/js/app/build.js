@@ -11592,7 +11592,7 @@
 	exports.default = {
 	    data: function data() {
 	        return {
-	            currentInput: 0,
+	            currentInput: '',
 	            calculationString: '',
 	            lastResult: '',
 	            result: ''
@@ -11610,11 +11610,13 @@
 	            this.lastResult = '';
 	            this.result = '';
 	        },
-	        buildCalculation: function buildCalculation() {
-	            this.calculationString = this.calculationString + ' ' + this.currentInput;
+	        buildCalculation: function buildCalculation(inputString) {
+	            this.calculationString = this.calculationString + '' + inputString;
+	            this.currentInput = this.calculationString;
 	        },
 	        calculate: function calculate(calculation) {
-	            this.result = eval(calculation);
+	            this.result = eval(this.calculationString);
+	            this.currentInput = this.result;
 	        }
 	    }
 	};
@@ -11637,62 +11639,137 @@
 	    attrs: {
 	      "id": "calc-inputValue"
 	    }
-	  }, [_vm._v(_vm._s(_vm.currentInput))])])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4)])
-	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
+	  }, [_vm._v(_vm._s(_vm.currentInput))])])]), _vm._v(" "), _c('div', {
 	    staticClass: "row calc-removeMarginBottom"
 	  }, [_c('div', {
-	    staticClass: "col s9 m9 l9 calc-ac calc"
+	    staticClass: "col s9 m9 l9 calc-ac calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.clear()
+	      }
+	    }
 	  }, [_c('h2', [_vm._v("AC")])]), _vm._v(" "), _c('div', {
-	    staticClass: "col s3 m3 l3 calc-operator calc"
-	  }, [_c('h2', [_vm._v("÷")])])])
-	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
+	    staticClass: "col s3 m3 l3 calc-operator calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.buildCalculation('/')
+	      }
+	    }
+	  }, [_c('h2', [_vm._v("/")])])]), _vm._v(" "), _c('div', {
 	    staticClass: "row calc-removeMarginBottom"
 	  }, [_c('div', {
-	    staticClass: "col s3 m3 l3 calc-operand calc"
+	    staticClass: "col s3 m3 l3 calc-operand calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.buildCalculation('7')
+	      }
+	    }
 	  }, [_c('h2', [_vm._v("7")])]), _vm._v(" "), _c('div', {
-	    staticClass: "col s3 m3 l3 calc-operand calc"
+	    staticClass: "col s3 m3 l3 calc-operand calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.buildCalculation('8')
+	      }
+	    }
 	  }, [_c('h2', [_vm._v("8")])]), _vm._v(" "), _c('div', {
-	    staticClass: "col s3 m3 l3 calc-operand calc"
+	    staticClass: "col s3 m3 l3 calc-operand calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.buildCalculation('9')
+	      }
+	    }
 	  }, [_c('h2', [_vm._v("9")])]), _vm._v(" "), _c('div', {
-	    staticClass: "col s3 m3 l3 calc-operator calc"
-	  }, [_c('h2', [_vm._v("x")])])])
-	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
+	    staticClass: "col s3 m3 l3 calc-operator calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.buildCalculation('*')
+	      }
+	    }
+	  }, [_c('h2', [_vm._v("*")])])]), _vm._v(" "), _c('div', {
 	    staticClass: "row calc-removeMarginBottom"
 	  }, [_c('div', {
-	    staticClass: "col s3 m3 l3 calc-operand calc"
+	    staticClass: "col s3 m3 l3 calc-operand calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.buildCalculation('4')
+	      }
+	    }
 	  }, [_c('h2', [_vm._v("4")])]), _vm._v(" "), _c('div', {
-	    staticClass: "col s3 m3 l3 calc-operand calc"
+	    staticClass: "col s3 m3 l3 calc-operand calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.buildCalculation('5')
+	      }
+	    }
 	  }, [_c('h2', [_vm._v("5")])]), _vm._v(" "), _c('div', {
-	    staticClass: "col s3 m3 l3 calc-operand calc"
+	    staticClass: "col s3 m3 l3 calc-operand calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.buildCalculation('6')
+	      }
+	    }
 	  }, [_c('h2', [_vm._v("6")])]), _vm._v(" "), _c('div', {
-	    staticClass: "col s3 m3 l3 calc-operator calc"
-	  }, [_c('h2', [_vm._v("-")])])])
-	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
+	    staticClass: "col s3 m3 l3 calc-operator calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.buildCalculation('-')
+	      }
+	    }
+	  }, [_c('h2', [_vm._v("-")])])]), _vm._v(" "), _c('div', {
 	    staticClass: "row calc-removeMarginBottom"
 	  }, [_c('div', {
-	    staticClass: "col s3 m3 l3 calc-operand calc"
+	    staticClass: "col s3 m3 l3 calc-operand calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.buildCalculation('1')
+	      }
+	    }
 	  }, [_c('h2', [_vm._v("1")])]), _vm._v(" "), _c('div', {
-	    staticClass: "col s3 m3 l3 calc-operand calc"
+	    staticClass: "col s3 m3 l3 calc-operand calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.buildCalculation('2')
+	      }
+	    }
 	  }, [_c('h2', [_vm._v("2")])]), _vm._v(" "), _c('div', {
-	    staticClass: "col s3 m3 l3 calc-operand calc"
+	    staticClass: "col s3 m3 l3 calc-operand calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.buildCalculation('3')
+	      }
+	    }
 	  }, [_c('h2', [_vm._v("3")])]), _vm._v(" "), _c('div', {
-	    staticClass: "col s3 m3 l3 calc-operator calc"
-	  }, [_c('h2', [_vm._v("+")])])])
-	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
+	    staticClass: "col s3 m3 l3 calc-operator calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.buildCalculation('+')
+	      }
+	    }
+	  }, [_c('h2', [_vm._v("+")])])]), _vm._v(" "), _c('div', {
 	    staticClass: "row calc-removeMarginBottom"
 	  }, [_c('div', {
-	    staticClass: "col s6 m6 l6 calc-operand calc"
+	    staticClass: "col s6 m6 l6 calc-operand calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.buildCalculation('0')
+	      }
+	    }
 	  }, [_c('h2', [_vm._v("0")])]), _vm._v(" "), _c('div', {
-	    staticClass: "col s3 m3 l3 calc-operand calc"
+	    staticClass: "col s3 m3 l3 calc-operand calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.buildCalculation('.')
+	      }
+	    }
 	  }, [_c('h2', [_vm._v(".")])]), _vm._v(" "), _c('div', {
-	    staticClass: "col s3 m3 l3 calc-operator calc"
-	  }, [_c('h2', [_vm._v("=")])])])
-	}]}
+	    staticClass: "col s3 m3 l3 calc-operator calc",
+	    on: {
+	      "click": function($event) {
+	        _vm.calculate()
+	      }
+	    }
+	  }, [_c('h2', [_vm._v("=")])])])])
+	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()
